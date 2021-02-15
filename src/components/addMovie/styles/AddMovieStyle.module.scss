@@ -1,0 +1,15 @@
+.addMovie {
+  //   background-color: yellow;
+  display: flex;
+  justify-content: flex-end;
+  //   margin-right: 50px;
+  padding: 10px;
+}
+.field {
+  //   background-color: pink;
+  display: flex;
+  justify-content: space-between;
+  input {
+    padding: 10px;
+  }
+}
