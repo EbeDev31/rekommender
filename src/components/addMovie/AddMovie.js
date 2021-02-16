@@ -7,6 +7,7 @@ const AddMovie = () => {
     }
     return (
         <div className={styles.addMovie}>
+
             <form onSubmit={addMovie}>
                 <div className={styles.field}>
                     <label>Title:</label>
@@ -20,8 +21,16 @@ const AddMovie = () => {
                     <label>Year:</label>
                     <input type='text' />
                 </div>
-                <input type='submit' value='Add Movie' style={{ marginTop: 5, padding: 10, display: 'flex', backgroundColor: 'cyan', marginLeft: 160 }} />
-
+                <input
+                    type='submit'
+                    value='Add Movie'
+                    style={{
+                        marginTop: 5,
+                        padding: 10,
+                        display: 'flex',
+                        backgroundColor: 'cyan',
+                        marginLeft: 160
+                    }} />
             </form>
         </div>
     )

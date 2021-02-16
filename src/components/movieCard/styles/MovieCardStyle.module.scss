@@ -1,0 +1,12 @@
+.movieCard {
+  height: 200px;
+  width: 500px;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-color: darkslateblue;
+  color: rgba(202, 207, 205, 1);
+  box-shadow: -5px 5px 10px rgb(0, 255, 191);
+}
