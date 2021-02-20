@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-import { addMovieMutation, getMoviesQuery } from '../../queries/queries';
+import { getMoviesQuery } from '../../queries/queries';
+import { addMovieMutation } from '../../mutations/mutations';
 import { useMutation } from '@apollo/client';
 import { graphql } from 'react-apollo';
 import { flowRight as compose } from 'lodash';
@@ -26,7 +27,7 @@ const AddMovie = ({ addMovieMutation }) => {
                 genre,
                 year
             },
-            refetchQueries: [{ getMoviesQuery }]
+            refetchQueries: [{ query: getMoviesQuery }]
         })
         setMovieInfo({
             name: '',
