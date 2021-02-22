@@ -1,7 +1,12 @@
 import React from 'react'
+import { FaBeer, FaFolder } from 'react-icons/fa';
+import { RiDeleteBin6Line } from 'react-icons/ri';
 import styles from './styles/MovieCardStyle.module.scss'
 
-const MovieCard = ({ movie }) => {
+import { IconContext } from "react-icons";
+
+
+const MovieCard = ({ movie, deleteMovie }) => {
     return (
         <div className={styles.movieCard}>
             <div style={{ borderRight: '5px grey solid', marginRight: 10, fontSize: 17 }}>
@@ -10,7 +15,9 @@ const MovieCard = ({ movie }) => {
                 <p>Genre : {movie.genre}</p>
                 <p>Year : {movie.year}</p>
             </div>
-            <div>
+            <div style={{ position: 'relative' }}
+                onClick={() => deleteMovie(movie.id)}>
+                <div className={styles.icon}><RiDeleteBin6Line size={'3em'} /></div>
                 some image
             </div>
         </div>

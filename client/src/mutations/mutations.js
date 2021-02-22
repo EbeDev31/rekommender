@@ -12,4 +12,11 @@ const addMovieMutation = gql`
     }
 `;
 
-export { addMovieMutation };
+const deleteMovieMutation = gql`
+    mutation DeleteMovie($id:String){
+        deleteMovie(id:$id){
+            name
+    }
+}
+`;
+export { addMovieMutation, deleteMovieMutation }

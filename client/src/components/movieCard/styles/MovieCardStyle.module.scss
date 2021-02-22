@@ -10,3 +10,14 @@
   color: rgba(202, 207, 205, 1);
   box-shadow: -5px 5px 10px rgb(0, 255, 191);
 }
+.icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(97, 148, 127, 1);
+  transition: background-color 2ms ease-in;
+}
+.icon:active {
+  background-color: rgba(97, 148, 127, 0.3);
+  // transition: background-color 2s;
+}

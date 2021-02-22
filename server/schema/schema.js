@@ -62,11 +62,9 @@ const Mutation = new GraphQLObjectType({
         },
         deleteMovie: {
             type: MovieType,
-            args: {
-                id: { type: GraphQLString }
-            },
+            args: { id: { type: GraphQLString } },
             resolve(parent, args) {
-                Movie.deleteOne(args.id)
+                return Movie.remove({ _id: args.id })
             }
         }
     }
