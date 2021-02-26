@@ -6,19 +6,15 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
-const username_password = process.env.USERNAME_PASSWORD
-console.log('Wow', username_password)
-// allow cross-origin requests
+const username_password = process.env.username_password
+
 app.use(cors());
 
-// connect to mlab database
-// make sure to replace my db string & creds with your own
 mongoose.connect(`mongodb+srv://${username_password}@cluster0.iuxv1.mongodb.net/ebegqldb`)
 mongoose.connection.once('open', () => {
     console.log('conneted to database Zeeby');
 });
 
-// bind express with graphql
 app.use('/graphql', graphqlHTTP({
     schema,
     graphiql: true
