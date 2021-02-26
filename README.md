@@ -1,3 +1,7 @@
+# About Application
+
+This is a simple fullstack app using React in the frontend and node/graphQl backend
+
 # Running the Application
 
 
