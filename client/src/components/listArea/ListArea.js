@@ -1,12 +1,11 @@
 
 import React from 'react'
 import { graphql } from 'react-apollo';
-import { getMoviesQuery } from '../../queries/queries';
-import { deleteMovieMutation } from '../../mutations/mutations';
-
-import MovieCard from '../movieCard/MovieCard';
 import { flowRight as compose } from 'lodash';
 
+import { getMoviesQuery } from '../../queries/queries';
+import { deleteMovieMutation } from '../../mutations/mutations';
+import MovieCard from '../movieCard/MovieCard';
 
 import styles from './styles/ListAreaStyle.module.scss'
 
@@ -26,10 +25,9 @@ const ListArea = ({ moviesQuery, deleteMovieMutation }) => {
 
     return (
         <div className={styles.listArea}>
-
             {
                 !loading && movies &&
-                <h1 style={{ textAlign: 'center', color: '#343934', borderBottom: '#d67d7d 3px solid', }}>{movies.length} Movies in Total</h1>
+                <h1 className={styles.title}>{movies.length} Movies in Total</h1>
             }
 
             {
@@ -38,10 +36,13 @@ const ListArea = ({ moviesQuery, deleteMovieMutation }) => {
                     We are stil Loading......................
                 </div>
             }
-            {
-                !loading && movies &&
-                movies.map((m) => <MovieCard deleteMovie={deleteMovie} key={m.id} movie={m} />)
-            }
+
+            <div className={styles.list}>
+                {
+                    !loading && movies &&
+                    movies.map((m) => <MovieCard deleteMovie={deleteMovie} key={m.id} movie={m} />)
+                }
+            </div>
         </div>
     )
 }
@@ -49,7 +50,6 @@ const ListArea = ({ moviesQuery, deleteMovieMutation }) => {
 export default compose(
     graphql(getMoviesQuery, { name: "moviesQuery" }),
     graphql(deleteMovieMutation, { name: "deleteMovieMutation" })
-
 )(ListArea)
 
 

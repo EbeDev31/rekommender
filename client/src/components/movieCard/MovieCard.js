@@ -1,10 +1,7 @@
 import React from 'react'
-import { FaBeer, FaFolder } from 'react-icons/fa';
 import { RiDeleteBin6Line } from 'react-icons/ri';
+
 import styles from './styles/MovieCardStyle.module.scss'
-
-import { IconContext } from "react-icons";
-
 
 const MovieCard = ({ movie, deleteMovie }) => {
     return (
